@@ -7,8 +7,8 @@ resume = {
     "name": "Sreelal S S",
     "email": "sreelal.s.s100@gmail.com",
     "phone": "+91-8592008405",
-    "github": "https://github.com/sreelalss",  # Updated placeholder
-    "linkedin": "https://linkedin.com/in/sreelalss",  # Updated placeholder
+    "github": "https://github.com/sreelaltom/",  # Updated placeholder
+    "linkedin": "https://www.linkedin.com/in/sreelal-s-s-454795256/",  # Updated placeholder
     "tableau": "https://public.tableau.com/app/profile/sreelalss",  # Updated placeholder
     "about": "A passionate Computer Science and Data Science student with expertise in Python, Machine Learning, and Data Visualization. Enthusiastic about building innovative projects and exploring filmmaking.",
     "education": [
