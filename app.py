@@ -34,7 +34,7 @@ resume = {
         {"name": "Text Trade Project", "description": "Contributed to a database for a website selling used books.", "link": ""}  # Add link if available
     ],
     "languages": ["Malayalam", "English"],
-    "interests": ["Machine Learning", "Filmmaking (Directed short films)"]
+    "interests": ["Machine Learning", "building ml models"]
 }
 
 @app.route('/')
