@@ -7,7 +7,7 @@ resume = {
     "name": "Sreelal S S",
     "email": "sreelal.s.s100@gmail.com",
     "phone": "+91-8592008405",
-    "leetcode": "https://github.com/sreelal/",
+    "leetcode": "https://leetcode.com/u/sreelaltom/",
     "github": "https://github.com/sreelaltom/",  # Updated placeholder
     "linkedin": "https://www.linkedin.com/in/sreelal-s-s-454795256/",  # Updated placeholder
     "tableau": "https://public.tableau.com/app/profile/sreelalss",  # Updated placeholder
