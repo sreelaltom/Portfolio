@@ -7,31 +7,34 @@ resume = {
     "name": "Sreelal S S",
     "email": "sreelal.s.s100@gmail.com",
     "phone": "+91-8592008405",
+    "leetcode": "https://github.com/sreelal/",
     "github": "https://github.com/sreelaltom/",  # Updated placeholder
     "linkedin": "https://www.linkedin.com/in/sreelal-s-s-454795256/",  # Updated placeholder
     "tableau": "https://public.tableau.com/app/profile/sreelalss",  # Updated placeholder
     "about": "A passionate Computer Science and Data Science student with expertise in Python, Machine Learning, and Data Visualization. Enthusiastic about building innovative projects and exploring filmmaking.",
     "education": [
         {"institution": "College of Engineering Trivandrum", "degree": "B.Tech in Computer Science", "duration": "2022-2026", "location": "Thiruvananthapuram"},
-        {"institution": "IIT Madras", "degree": "B.Sc in Data Science", "duration": "2022-2026", "location": "Chennai"}
+        {"institution": "IIT Madras", "degree": "B.Sc in Data Science Foundation", "duration": "2022-2024", "location": "Chennai"}
     ],
     "experience": [
         {"organization": "IEDC CET", "role": "Operations Team, Club Coordinator", "duration": "2023-2024", "location": "Trivandrum"},
-        {"organization": "Thinker Hub CET", "role": "Python Mentor", "duration": "2024", "location": "Trivandrum"}
+        {"organization": "Thinker Hub CET", "role": "Python Mentor", "duration": "2024", "location": "Trivandrum"},
+        {"organization": "MCQGenie", "role": "Intern", "duration": "2024 Jan - 2024 March", "location": "Trivandrum"}
     ],
     "skills": [
-        {"category": "Programming", "values": ["Python", "SQL"]},
-        {"category": "Machine Learning", "values": ["Supervised Learning", "Unsupervised Learning", "Deep Learning"]},
-        {"category": "Data Analysis", "values": ["Tableau"]},
-        {"category": "Data Visualization", "values": ["Matplotlib", "Tableau", "Excel"]},
-        {"category": "Tools", "values": ["Jupyter Notebook", "Git", "Tableau"]}
+        {"category": "Programming", "value": ["Python", "SQL"]},
+        {"category": "Machine Learning", "value": ["Supervised Learning", "Unsupervised Learning", "Deep Learning"]},
+        {"category": "Data Analysis", "value": ["Tableau"]},
+        {"category": "Data Visualization", "value": ["Matplotlib", "Tableau", "Excel"]},
+        {"category": "Tools", "value": ["Jupyter Notebook", "Git", "Tableau"]}
     ],
     "projects": [
-        {"name": "ChromaDB File Search", "description": "Developed a website for uploading and searching within files using ChromaDB.", "link": ""},  # Add link if available
-        {"name": "YouTube Video Reviewer", "description": "Built a tool to review YouTube videos using the YouTube API and NLP models.", "link": ""},  # Add link if available
-        {"name": "Vegetable Detection Model", "description": "Created a TensorFlow model for vegetable detection.", "link": ""},  # Add link if available
+        {"name": "ChromaDB File Search", "description": "Developed a website for uploading and searching within files using ChromaDB.", "link": "https://github.com/sreelaltom/FILE_Search_using_chromadb-pdf-"},  # Add link if available
+        {"name": "YouTube Video Reviewer", "description": "Built a tool to review YouTube videos using the YouTube API and NLP models.", "link": "https://github.com/sreelaltom/YouTube-comment-analyzer"},  # Add link if available
+        {"name": "Vegetable Detection Model", "description": "Created a TensorFlow model for vegetable detection.", "link": "https://github.com/sreelaltom/Vegetable-And-Fruit-Detector "},  # Add link if available
         {"name": "HR Dashboard Project", "description": "Designed an HR dashboard using Tableau for data visualization.", "link": "https://public.tableau.com/app/profile/sreelalss"},  # Updated placeholder
-        {"name": "Text Trade Project", "description": "Contributed to a database for a website selling used books.", "link": ""}  # Add link if available
+        {"name": "Text Trade Project", "description": "Contributed to a database for a website selling used books.", "link": "https://github.com/sreelaltom/aleph-zero"},
+          {"name": "Careplus - health monitoring app","description":"Build the entire backend on Django ,build food image detection model","link":"https://github.com/sreelaltom/CarePlus"}  # Add link if available
     ],
     "languages": ["Malayalam", "English"],
     "interests": ["Machine Learning", "building ml models"]
