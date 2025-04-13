@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ resume.name }} - Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" aria-label="Toggle theme">
+      <label class="cyber-switch">
+        <input type="checkbox" id="theme-switch" />
+        <span class="cyber-slider">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+        </span>
+      </label>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation">
+      <div class="container">
+        <a class="nav-link" href="#about">Sreelal</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="header" class="d-flex align-items-center">
+      <div id="particles-js"></div>
+      <div class="container text-center">
+        <h1 class="" data-text="{{ resume.name }}">{{ resume.name }}</h1>
+        <p class="lead mb-5">
+          <span id="typed-text" class="cyber-text"></span>
+        </p>
+        <div class="social-links mt-4">
+          <a
+            href="mailto:{{ resume.email }}"
+            class="social-icon cyber-icon"
+            data-bs-toggle="tooltip"
+            title="Email"
+            aria-label="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
+          <a
+            href="{{ resume.github }}"
+            target="_blank"
+            class="social-icon cyber-icon"
+            data-bs-toggle="tooltip"
+            title="GitHub"
+            aria-label="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="{{ resume.linkedin }}"
+            target="_blank"
+            class="social-icon cyber-icon"
+            data-bs-toggle="tooltip"
+            title="LinkedIn"
+            aria-label="LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a
+            href="{{ resume.tableau }}"
+            target="_blank"
+            class="social-icon cyber-icon"
+            data-bs-toggle="tooltip"
+            title="Tableau"
+            aria-label="Tableau"
+            ><i class="fas fa-chart-bar"></i
+          ></a>
+          <a
+            href="tel:{{ resume.phone }}"
+            class="social-icon cyber-icon"
+            data-bs-toggle="tooltip"
+            title="Phone"
+            aria-label="Phone"
+            ><i class="fas fa-phone"></i
+          ></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="zoom-in-down">
+          About Me
+        </h2>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <p class="lead text-center" data-aos="fade-up">
+              {{ resume.about }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="zoom-in-down">
+          Education
+        </h2>
+        <div class="row">
+          {% for edu in resume.education %}
+          <div
+            class="col-md-6 mb-4"
+            data-aos="slide-right"
+            data-aos-delay="{{ loop.index0 * 150 }}"
+          >
+            <div class="card cyber-card tilt-card">
+              <div class="card-body">
+                <h4 class="card-title">{{ edu.institution }}</h4>
+                <p class="card-text">
+                  {{ edu.degree }}<br />
+                  <small>{{ edu.duration }} | {{ edu.location }}</small>
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="zoom-in-down">
+          Experience
+        </h2>
+        <div class="row">
+          {% for exp in resume.experience %}
+          <div
+            class="col-md-6 mb-4"
+            data-aos="slide-left"
+            data-aos-delay="{{ loop.index0 * 150 }}"
+          >
+            <div class="card cyber-card tilt-card">
+              <div class="card-body">
+                <h4 class="card-title">{{ exp.organization }}</h4>
+                <p class="card-text">
+                  {{ exp.role }}<br />
+                  <small>{{ exp.duration }} | {{ exp.location }}</small>
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="zoom-in-down">
+          Skills
+        </h2>
+        <div class="row">
+          {% for skill in resume.skills %}
+          <div
+            class="col-md-4 mb-4"
+            data-aos="flip-up"
+            data-aos-delay="{{ loop.index0 * 150 }}"
+          >
+            <div class="card cyber-card tilt-card">
+              <div class="card-body">
+                <h5 class="card-title">{{ skill.category }}</h5>
+                <ul class="list-unstyled">
+                  {% for item in skill.values() %}
+                  <li
+                    class="skill-chip"
+                    data-aos="fade-in"
+                    data-aos-delay="{{ loop.index0 * 50 }}"
+                    data-animation-delay="{{ loop.index0 * 0.2 }}"
+                  >
+                    <i class="fas fa-code me-2"></i>{{ item }}
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="zoom-in-down">
+          Projects
+        </h2>
+        <div class="row">
+          {% for project in resume.projects %}
+          <div
+            class="col-md-4 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="{{ loop.index0 * 150 }}"
+          >
+            <div class="card cyber-card tilt-card">
+              <div class="card-body">
+                <h5 class="card-title">{{ project.name }}</h5>
+                <p class="card-text">{{ project.description }}</p>
+                {% if project.link %}
+                <a
+                  href="{{ project.link }}"
+                  class="btn btn-primary ripple"
+                  target="_blank"
+                  aria-label="View project {{ project.name }}"
+                  >View Project</a
+                >
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section id="languages" class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="zoom-in-down">
+          Languages
+        </h2>
+        <div class="text-center">
+          {% for lang in resume.languages %}
+          <span
+            class="badge cyber-badge"
+            data-aos="rotate-in"
+            data-aos-delay="{{ loop.index0 * 150 }}"
+            data-background="{{ ['#66ff66', '#6666ff'][loop.index0 % 2] }}"
+            >{{ lang }}</span
+          >
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Interests -->
+    <section id="interests" class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="zoom-in-down">
+          Interests
+        </h2>
+        <div class="text-center">
+          {% for interest in resume.interests %}
+          <span
+            class="badge cyber-badge"
+            data-aos="rotate-in"
+            data-aos-delay="{{ loop.index0 * 150 }}"
+            data-background="{{ ['#66ff66', '#6666ff'][loop.index0 % 2] }}"
+            >{{ interest }}</span
+          >
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-5">
+      <div class="container text-center">
+        <h2 class="section-title mb-5" data-aos="zoom-in-down">Get in Touch</h2>
+        <p class="lead" data-aos="fade-up">
+          Email: <a href="mailto:{{ resume.email }}">{{ resume.email }}</a
+          ><br />
+          Phone: <a href="tel:{{ resume.phone }}">{{ resume.phone }}</a><br />
+          Connect on
+          <a href="{{ resume.linkedin }}" target="_blank">LinkedIn</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+      <div class="container">
+        <p>
+          © {{ resume.name }} 2025 | Code & Craft by
+          <i class="fas fa-code text-accent"></i>
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/tilt.js@1.2.1/dest/tilt.jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Page transition
+      document.addEventListener("DOMContentLoaded", () => {
+        const transition = document.querySelector(".page-transition");
+        transition.style.opacity = "0";
+        setTimeout(() => transition.remove(), 500);
+      });
+
+      // Theme toggle
+      const themeSwitch = document.getElementById("theme-switch");
+      const body = document.body;
+      themeSwitch.addEventListener("change", () => {
+        body.classList.toggle("light-mode");
+        localStorage.setItem(
+          "theme",
+          body.classList.contains("light-mode") ? "light" : "dark"
+        );
+        updateParticles();
+      });
+      if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light-mode");
+        themeSwitch.checked = true;
+      }
+
+      // Particles.js
+      function updateParticles() {
+        particlesJS("particles-js", {
+          particles: {
+            number: { value: 100, density: { enable: true, value_area: 800 } },
+            color: { value: ["#00cc00", "#cc0000", "#0000cc"] },
+            shape: { type: "circle" },
+            opacity: { value: 0.6, random: true },
+            size: { value: 4, random: true },
+            line_linked: {
+              enable: true,
+              distance: 120,
+              color: body.classList.contains("light-mode")
+                ? "#333333"
+                : "#ffffff",
+              opacity: 0.5,
+              width: 1,
+            },
+            move: { enable: true, speed: 3, direction: "none", random: true },
+          },
+          interactivity: {
+            detect_on: "canvas",
+            events: {
+              onhover: { enable: true, mode: "grab" },
+              onclick: { enable: true, mode: "push" },
+            },
+            modes: { grab: { distance: 140 }, push: { particles_nb: 3 } },
+          },
+          retina_detect: true,
+        });
+      }
+      updateParticles();
+
+      // Typed.js
+      var typed = new Typed("#typed-text", {
+        strings: ["Code Architect", "Data Wizard", "ML Pioneer", "Storyteller"],
+        typeSpeed: 70,
+        backSpeed: 50,
+        backDelay: 2000,
+        loop: true,
+      });
+
+      // AOS
+      AOS.init({ duration: 1200, once: true });
+
+      // Apply dynamic styles
+      document.querySelectorAll("[data-animation-delay]").forEach((el) => {
+        el.style.animationDelay = el.getAttribute("data-animation-delay") + "s";
+      });
+
+      document.querySelectorAll("[data-background]").forEach((el) => {
+        el.style.background = el.getAttribute("data-background");
+      });
+
+      // Tilt.js
+      $(".tilt-card").tilt({
+        maxTilt: 20,
+        scale: 1.1,
+        speed: 500,
+        glare: true,
+        maxGlare: 0.4,
+      });
+
+      // Tooltips
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      tooltipTriggerList.forEach((el) => new bootstrap.Tooltip(el));
+
+      // Smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const transition = document.querySelector(".page-transition");
+          transition.style.opacity = "1";
+          setTimeout(() => {
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+              behavior: "smooth",
+            });
+            transition.style.opacity = "0";
+          }, 500);
+        });
+      });
+
+      // Ripple effect
+      $(".ripple").on("click", function (e) {
+        let x = e.clientX - e.target.getBoundingClientRect().left;
+        let y = e.clientY - e.target.getBoundingClientRect().top;
+        let ripples = $("<span class='ripple-effect'></span>");
+        ripples.css({ left: x, top: y });
+        $(this).append(ripples);
+        setTimeout(() => ripples.remove(), 700);
+      });
+    </script>
+  </body>
+</html>
