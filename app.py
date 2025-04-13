@@ -32,7 +32,7 @@ resume = {
         {"name": "ChromaDB File Search", "description": "Developed a website for uploading and searching within files using ChromaDB.", "link": "https://github.com/sreelaltom/FILE_Search_using_chromadb-pdf-"},  # Add link if available
         {"name": "YouTube Video Reviewer", "description": "Built a tool to review YouTube videos using the YouTube API and NLP models.", "link": "https://github.com/sreelaltom/YouTube-comment-analyzer"},  # Add link if available
         {"name": "Vegetable Detection Model", "description": "Created a TensorFlow model for vegetable detection.", "link": "https://github.com/sreelaltom/Vegetable-And-Fruit-Detector "},  # Add link if available
-        {"name": "HR Dashboard Project", "description": "Designed an HR dashboard using Tableau for data visualization.", "link": "https://public.tableau.com/app/profile/sreelalss"},  # Updated placeholder
+        {"name": "HR Dashboard Project", "description": "Designed an HR dashboard using Tableau for data visualization.", "link": "https://public.tableau.com/app/profile/sreelal.s.s/viz/HRDashbord_17247417930840/HRSummary"},  # Updated placeholder
         {"name": "Text Trade Project", "description": "Contributed to a database for a website selling used books.", "link": "https://github.com/sreelaltom/aleph-zero"},
           {"name": "Careplus - health monitoring app","description":"Build the entire backend on Django ,build food image detection model","link":"https://github.com/sreelaltom/CarePlus"}  # Add link if available
     ],

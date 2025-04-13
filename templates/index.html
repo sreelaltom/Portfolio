@@ -333,11 +333,12 @@
       <div class="container text-center">
         <h2 class="section-title mb-5" data-aos="zoom-in-down">Get in Touch</h2>
         <p class="lead" data-aos="fade-up">
-          Email: <a href="mailto:{{ resume.email }}">{{ resume.email }}</a
-          ><br />
-          Phone: <a href="tel:{{ resume.phone }}">{{ resume.phone }}</a><br />
-          Connect on
-          <a href="{{ resume.linkedin }}" target="_blank">LinkedIn</a>
+          <a href="mailto:{{ resume.email }}">Email Me</a> |
+          <a href="tel:{{ resume.phone }}">Call Me</a> |
+          <a href="{{ resume.linkedin }}" target="_blank">LinkedIn</a> |
+          <a href="{{ resume.github }}" target="_blank">GitHub</a> |
+          <a href="{{ resume.leetcode }}" target="_blank">LeetCode</a> |
+          <a href="{{ resume.tableau }}" target="_blank">Tableau</a>
         </p>
       </div>
     </section>
@@ -417,7 +418,12 @@
 
       // Typed.js
       var typed = new Typed("#typed-text", {
-        strings: ["Code Architect", "Data Wizard", "ML Pioneer", "Storyteller"],
+        strings: [
+          "ML Enthusiast",
+          "Python Developer",
+          "Creative Coder",
+          "Data Storyteller",
+        ],
         typeSpeed: 70,
         backSpeed: 50,
         backDelay: 2000,
