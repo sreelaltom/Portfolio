@@ -1,8 +1,8 @@
 from flask import Flask, render_template
 
-app = Flask(__name__)
+# Fix: You must define both template and static folder relative to project structure
+app = Flask(__name__, template_folder="../templates", static_folder="../static")
 
-# Resume data
 resume = {
     "name": "Sreelal S S",
     "email": "sreelal.s.s100@gmail.com",
@@ -11,7 +11,7 @@ resume = {
     "github": "https://github.com/sreelaltom/",
     "linkedin": "https://www.linkedin.com/in/sreelal-s-s-454795256/",
     "tableau": "https://public.tableau.com/app/profile/sreelalss",
-    "about": "A passionate Computer Science and Data Science student with expertise in Python, Machine Learning, and Data Visualization. Enthusiastic about building innovative projects and exploring filmmaking.",
+    "about": "A passionate Computer Science and Data Science student...",
     "education": [
         {"institution": "College of Engineering Trivandrum", "degree": "B.Tech in Computer Science", "duration": "2022-2026", "location": "Thiruvananthapuram"},
         {"institution": "IIT Madras", "degree": "B.Sc in Data Science Foundation", "duration": "2022-2024", "location": "Chennai"}
@@ -34,7 +34,7 @@ resume = {
         {"name": "Vegetable Detection Model", "description": "Created a TensorFlow model for vegetable detection.", "link": "https://github.com/sreelaltom/Vegetable-And-Fruit-Detector"},
         {"name": "HR Dashboard Project", "description": "Designed an HR dashboard using Tableau for data visualization.", "link": "https://public.tableau.com/app/profile/sreelal.s.s/viz/HRDashbord_17247417930840/HRSummary"},
         {"name": "Text Trade Project", "description": "Contributed to a database for a website selling used books.", "link": "https://github.com/sreelaltom/aleph-zero"},
-        {"name": "Careplus - health monitoring app", "description": "Build the entire backend on Django, build food image detection model", "link": "https://github.com/sreelaltom/CarePlus"}
+        {"name": "Careplus - health monitoring app", "description": "Built the entire backend on Django, built food image detection model", "link": "https://github.com/sreelaltom/CarePlus"}
     ],
     "languages": ["Malayalam", "English"],
     "interests": ["Machine Learning", "building ml models"]
@@ -43,3 +43,7 @@ resume = {
 @app.route('/')
 def index():
     return render_template('index.html', resume=resume)
+
+# For Vercel
+def handler(environ, start_response):
+    return app(environ, start_response)
