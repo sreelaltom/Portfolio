@@ -44,6 +44,7 @@ resume = {
 def index():
     return render_template('index.html', resume=resume)
 
-# For Vercel
-def handler(environ, start_response):
-    return app(environ, start_response)
+# Export the Flask app instance for Vercel
+# This is the correct way to export for Vercel Python runtime
+if __name__ == '__main__':
+    app.run(debug=True)
